@@ -2,11 +2,13 @@
 
 ### 1. Membuat Data Ingestion sederhana 🗃️
 1. Buat file pipeline.py file ini berisi script sederhana untuk menerima argumen dari command line untuk menjalan proses berdasarkan tanggal tertentu
-`import sys
+```python {
+import sys
 import pandas as ps
 print(sys.argv)
 day = sys.argv[1]
-print(f'job finish successfully for day {day}')`
+print(f'job finish successfully for day {day}')
+}
 
 2. Buat file Dockerfile yang berisikan konfigurasi untuk membuat docker image
 `FROM python:3.9.1
