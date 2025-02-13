@@ -7,6 +7,7 @@ import pandas as ps
 print(sys.argv)
 day = sys.argv[1]
 print(f'job finish successfully for day {day}')`
+
 2. Buat file Dockerfile yang berisikan konfigurasi untuk membuat docker image
 `FROM python:3.9.1
 RUN apt-get install wget
