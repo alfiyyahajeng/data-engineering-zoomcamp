@@ -11,7 +11,7 @@ print(f'job finish successfully for day {day}')
 ```
 
 2. Buat file Dockerfile yang berisikan konfigurasi untuk membuat docker image
-```json
+```python
 FROM python:3.9.1
 RUN apt-get install wget
 RUN pip install pandas sqlalchemy psycopg2
