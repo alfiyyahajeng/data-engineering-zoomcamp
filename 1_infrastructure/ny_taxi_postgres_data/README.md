@@ -36,23 +36,23 @@ Downloading data from the sources
 Create a Jupyter Notebook file `uploaded_data.ipynb` to transform data before uploading it to PostgreSQL
 
 a. Displaying the DataFrame as an SQL query
-```pyhton
+```python
 import pandas as pd
 print(pd.io.sql.get_schema(df, name='yellow_taxi_data'))
 ```
 b. Converting data text to timestamp format
-```pyhton
+```python
 df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
 df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
 ```
 c. Use SQLAlchemy to create a connection to PostgreSQL
-```pyhton
+```python
 from sqlalchemy import create_engine
 engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
 engine.connect()
 ```
 d. Generating DDL Statement by create table schema in a format compatible with PostgreSQL
-```pyhton
+```python
 print(pd.io.sql.get_schema(df, name='yellow_taxi_data', con=engine))
 ```
 now we get the data types that compatible with PostgreSQL 
@@ -68,4 +68,4 @@ Insert data into PostgreSQL:
 ```%time df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')```
 After uploading the data, verify the number of records in the table:
 ```SELECT COUNT(1) FROM yellow_taxi_data;```
-New Yotk taxi data is successfully ingested into PostgreSQL🎉
+New York taxi data is successfully ingested into PostgreSQL🎉
