@@ -24,12 +24,15 @@ Run PostgreSQL using Docker with the following commnad in your terminal:
   postgres:13
 ```
 After executing the command, a folder named `ny_taxi_postgres_data` will be created
+
 2. **Accesing the PostgreSQL Container**
 Enter the PostgreSQL Container by run this command:
 ``` docker exec -it <container_id> bash ```
+
 3. **Downloading teh Dataset**
 Downloading data from the sources
-4. Data Transformation with Jupyter Notebook
+
+4. **Data Transformation with Jupyter Notebook**
 Create a Jupyter Notebook file `uploaded_data.ipynb` to transform data before uploading it to PostgreSQL
 a. Displaying the DataFrame as an SQL query
 ```pyhton
@@ -52,11 +55,13 @@ d. Generating DDL Statement by create table schema in a format compatible with P
 print(pd.io.sql.get_schema(df, name='yellow_taxi_data', con=engine))
 ```
 now we get the data types that compatible with PostgreSQL 
+
 5. **Verifying Table Structure in PostgreSQL**
 Run this command to access the database and view the table structure:
 ```pgcli -h [localhost](http://localhost) -p 5432 -u root -d ny_taxi```
 View the table structure:
 ```\d yellow_taxi_data;```
+
 6. **Uploading Data to PostgreSQL**
 Insert data into PostgreSQL:
 ```%time df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')```
