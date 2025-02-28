@@ -59,13 +59,13 @@ now we get the data types that compatible with PostgreSQL
 
 5. **Verifying Table Structure in PostgreSQL**
 Run this command to access the database and view the table structure:
-```pgcli -h [localhost](http://localhost) -p 5432 -u root -d ny_taxi```
+`pgcli -h [localhost](http://localhost) -p 5432 -u root -d ny_taxi`
 View the table structure:
 ```\d yellow_taxi_data;```
 
 6. **Uploading Data to PostgreSQL**
 Insert data into PostgreSQL:
-```%time df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')```
+`%time df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')`
 After uploading the data, verify the number of records in the table:
-```SELECT COUNT(1) FROM yellow_taxi_data;```
-New York taxi data is successfully ingested into PostgreSQL🎉
+`SELECT COUNT(1) FROM yellow_taxi_data;`
+New York Taxi Data is successfully ingested into PostgreSQL🎉
