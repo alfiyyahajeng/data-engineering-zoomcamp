@@ -34,6 +34,7 @@ Downloading data from the sources
 
 4. **Data Transformation with Jupyter Notebook**
 Create a Jupyter Notebook file `uploaded_data.ipynb` to transform data before uploading it to PostgreSQL
+
 a. Displaying the DataFrame as an SQL query
 ```pyhton
 import pandas as pd
