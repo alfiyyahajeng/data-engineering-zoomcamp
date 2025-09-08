@@ -1,4 +1,4 @@
-# data-engineering-zoomcamp
+# Simple Data Ingestion
 
 ### 1. Membuat Data Ingestion sederhana 🗃️
 1. Buat file pipeline.py file ini berisi script sederhana untuk menerima argumen dari command line untuk menjalan proses berdasarkan tanggal tertentu
